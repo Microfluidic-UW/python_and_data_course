@@ -24,3 +24,13 @@ genetic_code = {
     "AGA": "R", "AGG": "R",  # Arginine
     "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G"   # Glycine
 }
+
+def read_fasta(path_to_fasta:str) -> str:
+    with open(path_to_fasta, 'r') as f:
+        FASTA = f.readlines()
+        FASTA.pop(0)
+        fasta = ''.join(FASTA)
+    return fasta
+
+fasta = read_fasta('sequence.txt')
+print(fasta)
